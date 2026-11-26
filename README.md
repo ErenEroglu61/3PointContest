@@ -91,7 +91,7 @@ Bu iki parça ayrı tutulduğunda hem test edilebilir bir oyun mantığı hem de
   - [x] Rack sıra kontrolü ve eliminasyon
   - [x] 70 saniyelik zamanlayıcı ve 30 saniyelik tiebreaker
   - [x] İlk tur, şampiyonluk turu ve tiebreaker akışı
-- [ ] `tests/` altında kural testlerinin yazılması
+- [x] `tests/` altında kural testlerinin yazılması
 - [ ] ModernGL ile zemin, pota ve topların çizilmesi
 - [ ] Shader'lar ve kamera kontrolü
 - [ ] Motor ile grafik katmanının `app.py` üzerinden bağlanması
