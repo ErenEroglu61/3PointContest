@@ -85,12 +85,12 @@ Bu iki parça ayrı tutulduğunda hem test edilebilir bir oyun mantığı hem de
 ## Yol Haritası
 - [x] Kural dokümanının incelenmesi ve proje planlaması
 - [x] Proje iskeletinin oluşturulması (klasör yapısı, git, requirements.txt)
-- [ ] `contest/` oyun motorunun yazılması
-  - [ ] Atış lokasyonları ve pedestallerin tanımlanması
-  - [ ] Top türleri ve puan hesabı
-  - [ ] Rack sıra kontrolü ve eliminasyon
-  - [ ] 70 saniyelik zamanlayıcı ve 30 saniyelik tiebreaker
-  - [ ] İlk tur, şampiyonluk turu ve tiebreaker akışı
+- [x] `contest/` oyun motorunun yazılması
+  - [x] Atış lokasyonları ve pedestallerin tanımlanması
+  - [x] Top türleri ve puan hesabı
+  - [x] Rack sıra kontrolü ve eliminasyon
+  - [x] 70 saniyelik zamanlayıcı ve 30 saniyelik tiebreaker
+  - [x] İlk tur, şampiyonluk turu ve tiebreaker akışı
 - [ ] `tests/` altında kural testlerinin yazılması
 - [ ] ModernGL ile zemin, pota ve topların çizilmesi
 - [ ] Shader'lar ve kamera kontrolü
