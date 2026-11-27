@@ -4,6 +4,7 @@ import glfw
 from src.graphics.court import Court
 from src.graphics.renderer import Renderer
 from src.graphics.window import create_window
+from src.graphics.spots import MAIN_POSITIONS, FROM_THE_LOGO_POSITIONS
 
 WIDTH, HEIGHT = 1280, 720
 
