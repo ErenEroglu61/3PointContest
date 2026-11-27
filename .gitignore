@@ -3,3 +3,9 @@
 .git/
 __pycache__/
 *.pyc
+
+# Oyun çıktıları
+data/
+screenshots/
+.pytest_cache/
+3PointContest/
