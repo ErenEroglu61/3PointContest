@@ -18,10 +18,11 @@ class Renderer:
         self.ctx.enable(moderngl.DEPTH_TEST)
 
         view = look_at(
-            eye=np.array([0.0, 10.0, 16.0]),
+            eye=np.array([0.0, 18.0, 24.0]),
             target=np.zeros(3),
             up=np.array([0.0, 1.0, 0.0]),
         )
+
         projection = perspective(
             fovy_deg=45.0, aspect=width / height, near=0.1, far=200.0
         )
@@ -34,6 +35,7 @@ class Renderer:
     def begin_frame(self) -> None:
         self.ctx.clear(0.1, 0.1, 0.12, depth=1.0)
 
-    def draw(self, vao: moderngl.VertexArray, color: tuple[float, float, float]) -> None:
+    def draw(self, vao: moderngl.VertexArray, color: tuple[float, float, float],
+             mode: int = moderngl.TRIANGLES) -> None:
         self.program["color"].value = color
-        vao.render(moderngl.TRIANGLES)
+        vao.render(mode)

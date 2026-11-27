@@ -1,4 +1,4 @@
-"""Giriş noktası: pencereyi açar ve render döngüsünü çalıştırır."""
+from src.graphics.hoop import Hoop
 import glfw
 
 from src.graphics.court import Court
@@ -14,6 +14,7 @@ def main() -> None:
         fb_width, fb_height = glfw.get_framebuffer_size(window)
         renderer = Renderer(ctx, fb_width, fb_height)
         court = Court(ctx, renderer.program)
+        hoops = [Hoop(ctx, renderer.program, side=1.0), Hoop(ctx, renderer.program, side=-1.0)]
 
         while not glfw.window_should_close(window):
             if glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.PRESS:
@@ -21,6 +22,9 @@ def main() -> None:
 
             renderer.begin_frame()
             renderer.draw(court.vao, court.color)
+
+            for hoop in hoops:
+                renderer.draw(hoop.rim_vao, hoop.color, hoop.mode)
 
             glfw.swap_buffers(window)
             glfw.poll_events()
