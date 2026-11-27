@@ -30,12 +30,15 @@ class Renderer:
 
         self.program["view"].write(view.T.astype("f4").tobytes())
         self.program["projection"].write(projection.T.astype("f4").tobytes())
-        self.program["model"].write(np.identity(4, dtype="f4").T.tobytes())
 
     def begin_frame(self) -> None:
         self.ctx.clear(0.1, 0.1, 0.12, depth=1.0)
 
     def draw(self, vao: moderngl.VertexArray, color: tuple[float, float, float],
-             mode: int = moderngl.TRIANGLES) -> None:
+             mode: int = moderngl.TRIANGLES, position=None) -> None:
+        model = np.identity(4, dtype="f4")
+        if position is not None:
+            model[:3, 3] = position
+        self.program["model"].write(model.T.tobytes())
         self.program["color"].value = color
         vao.render(mode)
